@@ -3,7 +3,7 @@ __author__ = 'pat'
 import os
 import re
 
-path = '/home/pat/CS-646-IR/book-data/books-medium/'
+path = '/home/pv/CS-646-IR/book-data/books-medium/'
 tokens = 0
 for dirpath, dirs, files in os.walk(path):
     for filename in files:
