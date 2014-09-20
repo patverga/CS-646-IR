@@ -1,88 +1,95 @@
 __author__ = 'pv'
 
 import os
-import re
+from collections import defaultdict
 from BeautifulSoup import BeautifulSoup
-from collections import Counter
+import string
 
 path = '/home/pv/CS-646-IR/book-data/books-tiny/'
+# how many times each word appears total
+total_word_counts = defaultdict(int)
 # how many books each word appears in
+books_containing_word = defaultdict(int)
 # how many pages each word appears in
-pages_words_occured_in = Counter
+pages_containing_word = defaultdict(int)
 
-def read_books_from_disk():
-    # global counts
-    book_count = 0
-    book_word_count_list = []
-    book_unique_word_count_list = []
-    page_count = 0
-    page_word_count_list = []
-    page_unique_word_count_list = []
+# global counts
+book_count = 0
+page_count = 0
+book_unique_length = []
+book_total_length = []
+page_unique_length = []
+page_total_length = []
 
-    # single words stats
-    # how many times each word appears in total
-    total_word_counts = Counter()
+replace_punctuation = string.maketrans(string.ascii_lowercase + string.ascii_uppercase + string.punctuation,
+                                       string.ascii_lowercase * 2 + ' '*len(string.punctuation))
+
+# get the line contents from all the books
+for dirpath, dirs, files in os.walk(path):
+    for book_file_name in files:
+
+        # for each book, read in and parse the xml file
+        print ("Parsing " + book_file_name)
+        book_file = open(os.path.join(dirpath, book_file_name), 'r')
+        book_xml = BeautifulSoup(book_file.read())
+
+        book_count += 1
+        book_word_counts = defaultdict(int)
+        book_length = 0
+
+        # break the book into pages
+        pages = book_xml.document.findAll("page")
+        # parse each page
+        for page in pages:
+            page_count += 1
+            page_word_counts = defaultdict(int)
+            # break the page into lines
+            lines = page.findAll("line")
+            # keep track of total number of words on each page
+            page_length = 0
+            for line in lines:
+                # extract line text
+                line_text = str(line.getText())
+                # count the unique words
+                for word in line_text.split():
+                    clean_word = word.translate(replace_punctuation)
+                  #  print (clean_word)
+                    page_word_counts[clean_word] += 1
+                    page_length += 1
+
+            # keep track of page sizes
+            page_unique_length.append(len(page_word_counts))
+            page_total_length.append(page_length)
+            book_length += page_length
+
+            for word, count in page_word_counts.iteritems():
+                # add page word occurances to the book occurances
+                book_word_counts[word] += count
+                pages_containing_word[word] += 1
+
+        # keep track of total book sizes
+        book_unique_length.append(len(book_word_counts))
+        book_total_length.append(book_length)
+
+        for word, count in book_word_counts.iteritems():
+            books_containing_word[word] += 1
+            total_word_counts[word] += count
+
+print "GLOBAL"
+print "book count : ", book_count
+print "page count : ", page_count
+print "page all word sum:", sum(page_total_length)
+print "page unique word sum:", sum(page_unique_length)
+print "book all word sum:", sum(book_total_length)
+print "book unique word sum:", sum(book_unique_length)
+
+print "sum total word:", sum(total_word_counts.values())
+# print "SINGLE WORD"
+# print "unique words across corpus:", total_word_counts.__len__()
 
 
-    # get the line contents from all the books
-    for dirpath, dirs, files in os.walk(path):
-        for filename in files:
-            print ("Parsing " + filename)
-            book_count += 1
-            file = open(os.path.join(dirpath, filename), 'r')
-            xml_str = file.read()
-            (book_page_count, book_total_word_counts) = parse_book(xml_str, total_word_counts, page_word_count_list, page_unique_word_count_list,
-                                     book_word_count_list, book_unique_word_count_list)
-            page_count += book_page_count
-            total_word_counts += book_total_word_counts
+# contents = map(lambda line: line.getText(), lines)
 
-    print "GLOBAL"
-    print "book count : ", book_count
-    print "page count : ", page_count
-    print "page word sum:", sum(page_word_count_list)
-    print "page unique word sum:", sum(page_unique_word_count_list)
-    print "book word sum:", sum(book_word_count_list)
-    print "book unique word sum:", sum(book_unique_word_count_list)
-    print "SINGLE WORD"
-    print "unique words across corpus:", total_word_counts.__len__()
-
-
-
-def parse_book(xml_str, current_word_counts, page_word_count_list, page_unique_word_count_list,
-               book_word_count_list, book_unique_word_count_list):
-    global pages_words_occured_in
-    # i think we only care about the lines of the books
-    xml_parse = BeautifulSoup(xml_str)
-    pages = xml_parse.document.findAll("page")
-    page_count = pages.__len__()
-
-    book_word_counts = Counter()
-
-    # parse each page
-    for page in pages:
-        # get the contents of each page in a single list
-        lines = page.findAll("line")
-        contents = map(lambda line: line.getText(), lines)
-        # count the unique words
-        page_word_counts = Counter(contents)
-        # increment counters for this book
-        book_word_counts = book_word_counts + page_word_counts
-        # counter for all books
-        current_word_counts = current_word_counts + page_word_counts
-        # lists of page word counts
-        page_word_count_list.append(contents.__len__())
-        page_unique_words = list(page_word_counts)
-        # for each word, we want to know how many pages it occured in
-        pages_words_occured_in.update(Counter(page_unique_words))
-        page_unique_word_count_list.append(page_unique_words.__len__())
-
-    book_word_count_list.append(sum(book_word_counts.values()))
-    book_unique_word_count_list.append(book_word_counts.__len__())
-
-    return page_count, current_word_counts
-
-
-read_books_from_disk()
 
 # SINGLE WORDS
 # The number of occurrences of that word that you encounter
