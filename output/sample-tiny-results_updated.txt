@@ -1,0 +1,56 @@
+EFC tiny N 10 2786
+EFC tiny TO 769919
+EFC tiny TU 37405
+EFC tiny 1 the 10 2582 55265 0.07178615 0.07178615
+EFC tiny 2 of 10 2578 32487 0.04219880 0.08439760
+EFC tiny 3 and 10 2530 20266 0.02632440 0.07897321
+EFC tiny 4 to 10 2483 18276 0.02373950 0.09495802
+EFC tiny 5 a 10 2487 17164 0.02229508 0.11147539
+...
+EFC tiny 46 we 10 788 1645 0.00213676 0.09829111
+EFC tiny 47 so 10 1025 1633 0.00212118 0.09969527
+EFC tiny 48 if 10 909 1597 0.00207441 0.09957187
+EFC tiny 49 will 10 727 1568 0.00203674 0.09980048
+EFC tiny 50 no 10 935 1547 0.00200947 0.10047334
+EFC tiny 811 powerful 8 70 101 0.00013119 0.10639782
+EFC tiny 586 strong 9 106 139 0.00018055 0.10580420
+EFC tiny 7091 butter 2 6 9 0.00001169 0.08289732
+EFC tiny 3322 salt 4 13 23 0.00002988 0.09924713
+EFC tiny 3859 washington 6 16 19 0.00002468 0.09523989
+EFC tiny 1714 james 6 28 49 0.00006365 0.10909313
+EFC tiny 2097 church 8 27 39 0.00005066 0.10623155
+EFC tiny powerful what what battery
+EFC tiny powerful one battery agent
+EFC tiny powerful fig more telescope
+EFC tiny powerful light most currents
+EFC tiny powerful may one electro
+EFC tiny strong her her light
+EFC tiny strong what one redoubt
+EFC tiny strong she she man
+EFC tiny strong one french hand
+EFC tiny strong if other reinforcement
+EFC tiny butter what fermentation cheese
+EFC tiny butter microbes solids require
+EFC tiny butter water lactic wax
+EFC tiny butter fermentation butyric putty
+EFC tiny butter into cheese rancid
+EFC tiny salt water water sugar
+EFC tiny salt what how marshes
+EFC tiny salt into sugar should
+EFC tiny salt air may accommodated
+EFC tiny salt will into works
+EFC tiny washington what george exam
+EFC tiny washington montreal between most
+EFC tiny washington would war divide
+EFC tiny washington could states d
+EFC tiny washington said most want
+EFC tiny james her sir cap
+EFC tiny james 2 rushbrook came
+EFC tiny james rushbrook mr mackintosh
+EFC tiny james mr said ii
+EFC tiny james she me bowers
+EFC tiny church what her lands
+EFC tiny church her other fallen
+EFC tiny church she lands m
+EFC tiny church d some london
+EFC tiny church will before france
