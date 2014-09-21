@@ -116,7 +116,8 @@ for dirpath, dirs, files in os.walk(path):
                         if not special_word_page_done[index]:
                             special_word_page_done[index] = True
                             for j in range(0, len(clean_words)):
-                                bigram_pages[index][clean_words[j]] += 1
+                                if i != j:
+                                    bigram_pages[index][clean_words[j]] += 1
 
             # keep track of page sizes
             page_unique_length.append(len(page_word_counts))
