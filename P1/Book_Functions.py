@@ -26,11 +26,14 @@ books_containing_word = defaultdict(int)
 pages_containing_word = defaultdict(int)
 
 # specific word bigram stats - map special words to dict location index
-bigram_index_map = {'powerful': 0, 'strong': 1, 'salt': 2, 'butter': 3}
-bigram_pages = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int)]
-bigram_windows = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int)]
-bigram_adjacent_pages = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int)]
-bigram_followed_by_count = [0, 0, 0, 0]
+bigram_index_map = {'powerful': 0, 'strong': 1, 'salt': 2, 'butter': 3, 'washington': 4, 'james': 5, 'church': 6}
+bigram_pages = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
+                defaultdict(int), defaultdict(int)]
+bigram_windows = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
+                  defaultdict(int), defaultdict(int)]
+bigram_adjacent_pages = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
+                         defaultdict(int), defaultdict(int)]
+bigram_followed_by_count = [0, 0, 0, 0, 0, 0, 0]
 
 # global counts
 book_count = 0
@@ -42,8 +45,8 @@ page_total_length = []
 
 # precompile these for efficiency
 to_lower = string.maketrans(string.ascii_uppercase, string.ascii_lowercase)
-bigram_regex = re.compile(".*(powerful|strong|butter|salt).*")
-special_word_regex = re.compile("^(powerful|strong|butter|salt)$")
+bigram_regex = re.compile(".*(powerful|strong|butter|salt|james|church|washington).*")
+special_word_regex = re.compile("^(powerful|strong|butter|salt|james|church|washington)$")
 
 # read in stop word list
 stop_words = set([line.rstrip() for line in open(stoplist_file, 'r')])
@@ -88,7 +91,8 @@ for dirpath, dirs, files in os.walk(path):
             clean_words = map(process_word, page_text.split())
             clean_words = filter(lambda cww: cww.strip(), clean_words)
 
-            special_word_page_done = [False, False, False, False]
+            # gross, but only count full page bigram stats once per special word
+            special_word_page_done = [False, False, False, False, False, False, False]
             # calculate bigram stats
             if bigram_regex.match(page_text):
                 for i in range(0, len(clean_words)):
@@ -154,7 +158,7 @@ total_words = sum(total_word_counts.values())
 # open output file
 output = open(output_file, 'w')
 
-print "\n\n"
+print "\n Exporting Results ... \n"
 
 output.write("%s %s %s %s %s\n" % (my_name, data_set, "N", book_count, page_count))
 output.write("%s %s %s %s\n" % (my_name, data_set, "TO", total_words))
@@ -172,7 +176,6 @@ for w, bigram_index in bigram_index_map.iteritems():
     # find this word in the word ranking list
     for i in range(0, len(top_words)):
         if top_words[i][0] == w:
-            print i
             rank = i
             v = top_words[i][1]
             break
@@ -180,13 +183,18 @@ for w, bigram_index in bigram_index_map.iteritems():
     tokenP = float(v) / float(total_words)
     output.write("%s %s %s %s %s %s %s %f %f\n" % (my_name, data_set, rank, w, books_containing_word.get(w),
                                                    pages_containing_word.get(w), v, tokenP, tokenP * (rank + 1)))
-    # find top 5 most associated words with this special word
+
+# find top 5 most associated words with this special word
+for w, bigram_index in bigram_index_map.iteritems():
     for i in range(0, 5):
         window_word, v1 = bigram_windows[bigram_index][i]
         page_word, v2 = bigram_pages[bigram_index][i]
-        adjacent_word, v3 = bigram_adjacent_pages[bigram_index][i]
+        if i < len(bigram_adjacent_pages[bigram_index]):
+            adjacent_word, v3 = bigram_adjacent_pages[bigram_index][i]
+        else:
+            adjacent_word = ""
         output.write("%s %s %s %s %s %s\n" % (my_name, data_set, w, page_word, window_word, adjacent_word))
 
-
 output.close()
+print("%s" % ("Done. Took : "))
 print(datetime.datetime.now() - start_time)
