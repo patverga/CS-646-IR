@@ -12,7 +12,7 @@ from BeautifulSoup import BeautifulSoup
 start_time = datetime.datetime.now()
 
 # io info
-data_set = "tiny"
+data_set = "medium"
 my_name = "pv"
 output_file = "../output/" + data_set
 stoplist_file = "../stopwords.list.sorted"
@@ -195,6 +195,7 @@ for w, bigram_index in bigram_index_map.iteritems():
             adjacent_word = ""
         output.write("%s %s %s %s %s %s\n" % (my_name, data_set, w, page_word, window_word, adjacent_word))
 
+
+output.write("%s %s %s" % ("Finished Dataset :", data_set, " Time Elapsed : "))
+output.write(datetime.datetime.now() - start_time)
 output.close()
-print("%s" % ("Done. Took : "))
-print(datetime.datetime.now() - start_time)
