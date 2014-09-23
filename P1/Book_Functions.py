@@ -12,9 +12,10 @@ from BeautifulSoup import BeautifulSoup
 start_time = datetime.datetime.now()
 
 # io info
-data_set = "medium"
+data_set = "big"
 my_name = "pv"
-output_file = "../output/" + data_set
+output_file = "../output/" + data_set + ".results"
+association_file = "../output/" + data_set + ".associations"
 stoplist_file = "../stopwords.list.sorted"
 path = '/home/pv/CS-646-IR/book-data/books-' + data_set
 
@@ -31,8 +32,10 @@ bigram_pages = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdic
                 defaultdict(int), defaultdict(int)]
 bigram_windows = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
                   defaultdict(int), defaultdict(int)]
-bigram_adjacent_pages = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
-                         defaultdict(int), defaultdict(int)]
+bigram_follows = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
+                  defaultdict(int), defaultdict(int)]
+bigram_proceeds = [defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int), defaultdict(int),
+                   defaultdict(int), defaultdict(int)]
 bigram_followed_by_count = [0, 0, 0, 0, 0, 0, 0]
 
 # global counts
@@ -85,7 +88,7 @@ for dirpath, dirs, files in os.walk(path):
             page_length = 0
 
             # extract line text
-            page_text_list = [str(line.getText()) for line in lines]
+            page_text_list = [line.getText().encode('utf-8') for line in lines]
             page_text = " ".join(page_text_list)
             # count and clean the words
             clean_words = map(process_word, page_text.split())
@@ -103,10 +106,10 @@ for dirpath, dirs, files in os.walk(path):
                         if i + 1 < len(clean_words):
                             bigram_followed_by_count[index] += 1
                             # increment the word right after special word
-                            bigram_adjacent_pages[index][clean_words[i + 1]] += 1
+                            bigram_follows[index][clean_words[i + 1]] += 1
                         if i - 1 >= 0:
                             # increment the word right before special word
-                            bigram_adjacent_pages[index][clean_words[i - 1]] += 1
+                            bigram_proceeds[index][clean_words[i - 1]] += 1
                         # increment all the words within the current window
                         window_start = i - (i % 20)
                         for j in range(window_start, min(window_start + 20, len(clean_words))):
@@ -142,13 +145,21 @@ for dirpath, dirs, files in os.walk(path):
 top_words = sorted(total_word_counts.items(), key=lambda x: x[1])
 top_words.reverse()
 for i in range(0, len(bigram_index_map)):
-    sorted_adjacency_pages = sorted(bigram_adjacent_pages[i].items(), key=lambda x: x[1])
-    sorted_adjacency_pages.reverse()
+    # words that follow
+    sorted_follows_pages = sorted(bigram_follows[i].items(), key=lambda x: x[1])
+    sorted_follows_pages.reverse()
     # remove stop words from sorted list
-    bigram_adjacent_pages[i] = [word for word in sorted_adjacency_pages if not stop_words.__contains__(word[0])]
+    bigram_follows[i] = [word for word in sorted_follows_pages if not stop_words.__contains__(word[0])]
+    # words that proceed
+    sorted_proceeds_pages = sorted(bigram_proceeds[i].items(), key=lambda x: x[1])
+    sorted_proceeds_pages.reverse()
+    # remove stop words from sorted list
+    bigram_proceeds[i] = [word for word in sorted_proceeds_pages if not stop_words.__contains__(word[0])]
+    # words within the same window
     sorted_window = sorted(bigram_windows[i].items(), key=lambda x: x[1])
     sorted_window.reverse()
     bigram_windows[i] = [word for word in sorted_window if not stop_words.__contains__(word[0])]
+    # words on the same page
     sorted_pages = sorted(bigram_pages[i].items(), key=lambda x: x[1])
     sorted_pages.reverse()
     bigram_pages[i] = [word for word in sorted_pages if not stop_words.__contains__(word[0])]
@@ -158,6 +169,7 @@ total_words = sum(total_word_counts.values())
 
 # open output file
 output = open(output_file, 'w')
+association = open(association_file, 'w')
 
 print "\n Exporting Results ... \n"
 
@@ -185,18 +197,39 @@ for w, bigram_index in bigram_index_map.iteritems():
     output.write("%s %s %s %s %s %s %s %f %f\n" % (my_name, data_set, rank, w, books_containing_word.get(w),
                                                    pages_containing_word.get(w), v, tokenP, tokenP * (rank + 1)))
 
-# find top 5 most associated words with this special word
+# find top most associated words with this special words
+association.write("%s %s %s %s %s %s %s %s %s %s\n" % (
+    "word", "rank", "page", "page_prob", "window", "window_prob", "follow", "follow_prob", "proceed", "proceed_prob"))
 for w, bigram_index in bigram_index_map.iteritems():
-    for i in range(0, 5):
-        window_word, v1 = bigram_windows[bigram_index][i]
-        page_word, v2 = bigram_pages[bigram_index][i]
-        if i < len(bigram_adjacent_pages[bigram_index]):
-            adjacent_word, v3 = bigram_adjacent_pages[bigram_index][i]
-        else:
-            adjacent_word = ""
-        output.write("%s %s %s %s %s %s\n" % (my_name, data_set, w, page_word, window_word, adjacent_word))
+    proceeds_total = sum(n for _, n in bigram_proceeds[bigram_index])
+    follows_total = sum(n for _, n in bigram_follows[bigram_index])
+    page_total = sum(n for _, n in bigram_pages[bigram_index])
+    window_total = sum(n for _, n in bigram_windows[bigram_index])
+    print proceeds_total, follows_total
+    for i in range(0, 10):
+        page_word, v1 = "", 0
+        if i < len(bigram_pages[bigram_index]):
+            page_word, v1 = bigram_pages[bigram_index][i]
+        window_word, v2 = "", 0
+        if i < len(bigram_windows[bigram_index]):
+            window_word, v2 = bigram_windows[bigram_index][i]
+        follows_word, v3 = "", 0
+        if i < len(bigram_follows[bigram_index]):
+            follows_word, v3 = bigram_follows[bigram_index][i]
+        proceed_word, v4 = "", 0
+        if i < len(bigram_proceeds[bigram_index]):
+            proceed_word, v4 = bigram_proceeds[bigram_index][i]
 
+        if i < 5:
+            output.write("%s %s %s %s %s %s\n" % (my_name, data_set, w, page_word, window_word, follows_word))
 
-output.write("%s %s %s" % ("Finished Dataset :", data_set, " Time Elapsed : "))
-output.write(datetime.datetime.now() - start_time)
+        association.write(
+            "%s %s %s %f %s %f %s %f %s %f\n" % (
+                w, i, page_word, float(v1 / float(page_total + 1)), window_word, float(v2 / float(window_total + 1)),
+                follows_word, float(v3 / float(follows_total + 1)), proceed_word,
+                float(v4 / float(proceeds_total + 1))))
+
+association.close()
+print("%s %s" % ("Finished Dataset :", data_set))
+output.write("%s %s\n" % ("Time Elapsed: ", str(datetime.datetime.now() - start_time)))
 output.close()
