@@ -1,0 +1,71 @@
+word rank page page_prob window window_prob follow follow_prob proceed proceed_prob
+butter 0 what 0.016141 fermentation 0.090909 cheese 0.400000 milk 0.333333
+butter 1 microbes 0.011530 butyric 0.050505 putty 0.200000 instance 0.333333
+butter 2 fermentation 0.009992 milk 0.040404 require 0.200000  0.000000
+butter 3 water 0.009992 cheese 0.040404  0.000000  0.000000
+butter 4 will 0.009224 solids 0.030303  0.000000  0.000000
+butter 5 heat 0.008455 acid 0.030303  0.000000  0.000000
+butter 6 into 0.008455 lactic 0.030303  0.000000  0.000000
+butter 7 air 0.008455 such 0.020202  0.000000  0.000000
+butter 8 solids 0.007686 butter 0.020202  0.000000  0.000000
+butter 9 may 0.007686 gives 0.020202  0.000000  0.000000
+washington 0 montreal 0.015652 left 0.031250 advising 0.250000  0.000000
+washington 1 wilkinson 0.013043 montreal 0.031250 war 0.250000  0.000000
+washington 2 would 0.013043 de 0.031250 where 0.250000  0.000000
+washington 3 army 0.008696 war 0.031250  0.000000  0.000000
+washington 4 hampton 0.008696 what 0.031250  0.000000  0.000000
+washington 5 could 0.007826 armstrong 0.031250  0.000000  0.000000
+washington 6 boats 0.007826 called 0.015625  0.000000  0.000000
+washington 7 st 0.006957 where 0.015625  0.000000  0.000000
+washington 8 war 0.006087 secretary 0.015625  0.000000  0.000000
+washington 9 while 0.006087 ascrib 0.015625  0.000000  0.000000
+church 0 will 0.008336 lands 0.020619 lands 0.200000 every 0.142857
+church 1 what 0.007974 those 0.015464 bells 0.100000 held 0.142857
+church 2 how 0.007974 some 0.015464 called 0.100000 mission 0.142857
+church 3 would 0.005799 every 0.010309 steeple 0.100000 romish 0.142857
+church 4 time 0.005074 unless 0.010309 lands289 0.100000 catholic 0.142857
+church 5 if 0.005074 many 0.010309 stile 0.100000 1814 0.142857
+church 6 second 0.005074 grant 0.010309 pro 0.100000  0.000000
+church 7 velocity 0.004349 1814 0.010309 organ 0.100000  0.000000
+church 8 some 0.004349 will 0.010309  0.000000  0.000000
+church 9 any 0.004349 refusing 0.010309  0.000000  0.000000
+powerful 0 what 0.009571 battery 0.010860 battery 0.108434 most 0.216216
+powerful 1 one 0.006006 most 0.009955 telescope 0.060241 more 0.216216
+powerful 2 fig 0.005130 one 0.009955 agent 0.060241 very 0.108108
+powerful 3 may 0.004629 more 0.009955 currents 0.036145 less 0.081081
+powerful 4 other 0.004191 through 0.008145 chemical 0.024096 sensitive 0.027027
+powerful 5 light 0.004004 electric 0.007240 magnet 0.024096 great 0.027027
+powerful 6 how 0.003941 light 0.007240 according 0.024096 possess 0.027027
+powerful 7 will 0.003879 may 0.007240 natural 0.024096 extremely 0.027027
+powerful 8 battery 0.003691 magnet 0.007240 effects 0.024096 correspondingly 0.027027
+powerful 9 power 0.003691 effects 0.006335 enough 0.024096 too 0.027027
+james 0 her 0.010204 436 0.043478 bowers 0.500000 mr 0.500000
+james 1 lady 0.010204 mr 0.043478  0.000000  0.000000
+james 2 before 0.010204 editorial 0.043478  0.000000  0.000000
+james 3 written 0.008163 afternoon 0.043478  0.000000  0.000000
+james 4 see 0.008163 conversation 0.043478  0.000000  0.000000
+james 5 play 0.008163 times 0.043478  0.000000  0.000000
+james 6 quarto 0.006122 room 0.043478  0.000000  0.000000
+james 7 work 0.006122 nov 0.043478  0.000000  0.000000
+james 8 editor 0.006122 consideration 0.043478  0.000000  0.000000
+james 9 same 0.006122 after 0.043478  0.000000  0.000000
+strong 0 her 0.007124 very 0.007952 enough 0.038462 very 0.217391
+strong 1 what 0.005681 her 0.006627 position 0.028846 used 0.043478
+strong 2 she 0.005681 one 0.005302 hand 0.028846 less 0.043478
+strong 3 would 0.004152 she 0.004639 light 0.019231 usual 0.021739
+strong 4 one 0.004021 could 0.004639 man 0.019231 found 0.021739
+strong 5 if 0.003540 two 0.004639 reinforcement 0.019231 chateauguay 0.021739
+strong 6 more 0.003321 french 0.004639 places 0.019231 always 0.021739
+strong 7 how 0.003190 other 0.003976 glass 0.019231 without 0.021739
+strong 8 will 0.003103 made 0.003976 affinity 0.019231 exceedingly 0.021739
+strong 9 into 0.003103 line 0.003976 one 0.019231 sufficiently 0.021739
+salt 0 water 0.016910 water 0.040179 colored 0.111111 neutral 0.333333
+salt 1 what 0.010055 sugar 0.026786 than 0.111111 molten 0.222222
+salt 2 into 0.009598 into 0.022321 baths 0.111111 more 0.222222
+salt 3 will 0.007313 without 0.017857 water 0.111111 how 0.111111
+salt 4 air 0.005941 how 0.017857 bath 0.111111  0.000000
+salt 5 through 0.005941 may 0.013393 may 0.111111  0.000000
+salt 6 heat 0.005484 battery 0.013393 tnd 0.111111  0.000000
+salt 7 quantity 0.005027 than 0.013393 marshes 0.111111  0.000000
+salt 8 may 0.005027 quantity 0.008929  0.000000  0.000000
+salt 9 other 0.004570 neutral 0.008929  0.000000  0.000000
