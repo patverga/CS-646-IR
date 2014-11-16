@@ -1,0 +1,49 @@
+{
+"queries" : [
+{
+"number" : "2",
+"text" : "#sdm(Roman Empire)"
+},
+{
+"number" : "5",
+"text" : "#sdm(lead poisoning effects)"
+},
+{
+"number" : "6",
+"text" : "#sdm(cathode ray experiment)"
+},
+{
+"number" : "7",
+"text" : "#sdm(rio de gabio)"
+},
+{
+"number" : "11",
+"text" : "#sdm(spider web)"
+},
+{
+"number" : "16",
+"text" : "#sdm(amino acid)"
+},
+{
+"number" : "17",
+"text" : "#sdm(revolt of 1857)"
+},
+{
+"number" : "20",
+"text" : "#sdm(Beethoven birthplace)"
+},
+{
+"number" : "22",
+"text" : "#sdm(mining iron Canada)"
+},
+{
+"number" : "28",
+"text" : "#sdm(prevent bacteria growth meat)"
+},
+{
+"number" : "29",
+"text" : "#sdm(curie radium discovery)"
+}
+]
+}
+

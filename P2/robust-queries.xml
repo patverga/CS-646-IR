@@ -1,0 +1,303 @@
+<topics>
+<topic>
+<num>1</num>
+<title>foreign trade</title>
+<desc>major foreign trade during world war</desc>
+<narr>The query seeks to know the situation of foreign trade during the world war times. Information like which countries were trading, what all goods were being traded are relevant</narr>
+<count>7</count>
+</topic>
+<topic>
+<num>2</num>
+<title>united states foreign policy in gulf</title>
+<desc>Describe US foreign policy in Gulf area</desc>
+<narr>Interested in knowing more about United states Foreign policy in Gulf area. What influence did it had on world politics.</narr>
+<count>6</count>
+</topic>
+
+<topic>
+<num>3</num>
+<title>deadly disease due to diet</title> 
+<desc>which type of diets
+leads to life threatening diseases</desc> 
+<narr>A relevant documents
+should focus on what kind of foods and dietary habits leads to life
+threatening diseases.  It should also focus on some of the diet
+precautions which would avoid them </narr> 
+<count>7</count>
+</topic>
+
+<topic>
+<num>4</num>
+<title>Africa inflation</title>
+<desc>What countries in Africa have had problems with inflation?</desc>
+<narr>I am interested in what specific countries have or have had problems with inflation. Articles that are about Africa as a whole and inflation problems are not relevant</narr>
+<count>7</count>
+</topic>
+
+
+
+<topic>
+<num>5</num>
+<title>when was the fall of Saigon</title>
+<desc>when was the fall of Saigon</desc>
+<narr>Fall of Saigon refers to the capture of Saigon, the capital of South Vietnam by People's Army of Vietnam. A document which returns the date of capture is relevant. Any other document is irrelevant</narr>
+<count>3</count>
+</topic>
+
+<topic>
+<num>6</num>
+<title>height of Eastern Ghats in India</title> 
+<desc>What is the average levitation of eastern Ghats in India</desc> 
+<narr>I need the information about the exact height of the eastern ghat ranges in India. Any other description about eastern ghats (no other mountain range), if not the elevation , is irrelevant. </narr> 
+<count>4</count>
+</topic>
+
+<topic>
+<num>7</num>
+<title>leading cause of death in United States since 1990</title>
+<desc>What are the leading causes of death in the United States since 1990?</desc> 
+<narr>I am interested in what are the leading factors reported to have caused death in Unites States since 1990. Any specific incident, any other country or other period of time is not relevant</narr> 
+<count>5</count>
+</topic>
+
+<topic>
+<num>8</num>
+<title>Lead poisoning in 1989 </title> 
+<desc>How did the lead poisoning affect the working class in 1989?</desc> 
+<narr>I am interested in how was the lead poisoning noticed and how did it affect the workers during the period of 1989 and onwards and what steps were taken as a result of it. Other Lead poisoning incidents affecting children or other citizens is not relevant </narr> 
+<count>3</count>
+</topic>
+
+<topic>
+<num>9</num>
+<title>Butrus-Ghali Germany support</title>
+<desc>Butrus supporting Germany for UN security council</desc>
+<narr>The documents showing Batrus-Ghali supporting Germany for UN security council for permanent member</narr>
+<count>3</count>
+</topic>
+
+<topic>
+<num>10</num>
+<title>global warming</title>
+<desc>global warming causes and effect</desc>
+<narr>I am interested in the causes and effect of global warming. Is it really invoked by human industrialization or the natural evolution.</narr>
+<count>5</count>
+</topic>
+
+<topic>
+<num>11</num>
+<title>Mortal Kombat violent</title>
+<desc>I would like to read articles about the controversy surrounding Mortal Kombat's violent gameplay.</desc>
+<narr>In the early-to-mid 90's, Mortal Kombat and its sequel, Mortal Kombat II, caused a lot of controversy surrounding its violent gameplay, which let players brutally murder their opponent at the end of a fighting match. I would like to read news articles concerning this controversy.</narr>
+<count>2</count>
+</topic>
+
+
+<topic>
+<num>12</num>
+<title>Shakespeare poems</title>
+<desc>Poems written by William Shakespeare</desc>
+<narr>This intention of this query is to be able to retrieve poems written by William Shakespeare, or some relevant commentary about those poems. Results that simply mention the name Shakespeare, while talking about some other poet, are considered irrelevant</narr>
+<count>4</count>
+</topic>
+
+<topic>
+<num>13</num>
+<title>software security</title>
+<desc>What is the meaning of software security?</desc>
+<narr>I want to know what software security stand for and the reason why people should emphasize it. It is great if the search results could tell me some cases of the harmfulness of ignoring software security.</narr>
+<count>6</count>
+</topic>
+
+<topic>
+<num>14</num>
+<title>technology transfer</title>
+<desc>What's the meaning of technology transfer?</desc>
+<narr>I want to know the definition of technology transfer. What's the related law? What's the examples in our life?</narr>
+<count>5</count>
+</topic>
+
+<topic>
+<num>15</num>
+<title>small pox effects</title>
+<desc>What are the effects of small pox?</desc>
+<narr>I want to what  effects does small pox. Is it a spreadable virus? Is it curable?</narr>
+<count>1</count>
+</topic>
+
+<topic>
+<num>16</num>
+<title>world cup Italy</title>
+<desc>How did Italy perform in world cup competitions?</desc>
+<narr>I am interested in knowing the outcome of any world cup competition in which Italy participated, with no restriction to the sport being played (e.g., soccer, marathon, etc.)</narr>
+<count>3</count>
+</topic>
+
+<topic>
+<num>17</num>
+<title>Stevie Ray Vaughan birth</title>
+<desc>In what city was Stevie Ray Vaughan born?</desc>
+<narr>Stevie Ray Vaughan was an American musician known for Texas Blues. A document is relative if it mentions the city he was born in, the date does not matter for relevance.</narr>
+<count>2</count>
+</topic>
+
+
+<topic>
+<num>18</num>
+<title>ISRO PSLV failure</title>
+<desc>consequences and reason for PSLV satellite failure</desc>
+<narr>The dataset contains a number of articles outlines news about a couple of failure incidents of the PSLV satellites by ISRO. I have considered any doc reporting this as relevant</narr>
+<count>5</count>
+</topic>
+
+<topic>
+<num>19</num>
+<title>why Boston tea party </title>
+<desc>why did the Boston tea party happen in history?</desc>
+<narr>I am looking for reasons why the Boston tea party occurred. Keywords that are similar to "No taxation without representation." should be included to be relevant. Any other pages that are about tea parties or other historical events similar to the Boston tea party are not relevant.  </narr>
+<count> 3 </count>
+</topic>
+
+
+<topic>
+<num>20</num>
+<title>thanksgiving turkey recipe</title>
+<desc>What are the recommended turkey recipes for Thanksgiving?</desc>
+<narr>I am looking for recipe that describes a list of ingredients and amount of the ingredients necessary, and at least brief description on how to cook the ingredients. Pages that include something like "turkey sandwich recipes for thanksgiving" are not relevant. </narr>
+<count> 4 </count>
+</topic>
+
+<topic>
+<num>21</num>
+<title>television impact</title>
+<desc>Impact of television on individuals, society, politics etc</desc>
+<narr>I am interested in understanding the impact of television in lives of people. Any article on using television advertising to influence people's choices or any study relating television watching to health etc is relevant. Any result that is not about television but mentions it along with few other related things is not relevant</narr>
+<count>4</count>
+</topic>
+
+
+
+<topic>
+<num>22</num>
+<title>Bob Dole political views</title>
+<desc>What are Bob Dole's political views?</desc>
+<narr>This query should return results about Bob Dole's political views. </narr>
+<count>8</count>
+</topic>
+
+<topic>
+<num>23</num>
+<title>pollution control to reduce lung diseases</title>
+<desc> the ways to control the pollution and also analyze 
+how the damage it does to human lungs</desc>
+<narr> the causes of pollution , analysis and effects it can have 
+on people and also understanding the ways to reduce it </narr>
+<count>5</count>
+</topic>
+
+<topic>
+<num>24</num>
+<title> mahatma gandhi </title>
+<desc> life of mahatma gandhi </desc>
+<narr> the struggles of mahatma gandhi which he fought for
+freedom of India, his ideas and principles. </narr>
+<count>4</count>
+</topic>
+
+<topic>
+<num>25</num>
+<title>america crime rate</title>
+<desc>information about the crime rate in America</desc>
+<narr>I want to get some basic information about crime rate in America. What is the approximate crime rate in America these years? Is it higher or lower than other countries? How does the rate change in the past decades? Or some news about America crime rates. Anything that is not about America's crime rate should be labeled as not relevant</narr>
+<count>4</count>
+</topic>
+
+<topic>
+<num>26</num>
+<title>oil crisis time</title>
+<desc>When did the human have the oil crisis?</desc>
+<narr>I'm interested in the time of oil crisis happened in the human history. Only the document which contain the oil crisis or oil shocks and also given the time of that happened will be relevant. The time can be 1972, 1979 or 1990, since we totally have three oil crisis. If it only mentions the oil, oil price, oil drilling, it will be irrelevant. </narr>
+<count>5</count>
+</topic>
+
+
+<topic>
+<num>27</num>
+<title>Ninja Turtles </title>
+<desc>Information Regarding Ninja turtles the movie and characters </desc>
+<narr> Information with respect to  Ninja Turtles movie, actors played in the movie , comic books, outfits and swags. Information with respect to Japanese ninja or turtle as an animal is irrelevant. The title mainly pertains to cool and zappy, ninja turtles which talks about rapheal, donatello and other characters or themed based on the movie.</narr>
+<count>8</count>
+</topic>
+
+
+<topic>
+<num>28</num>
+<title>terrorists before 1990</title>
+<desc>Were there any major terrorist attacks before 1990?</desc>
+<narr>I'm interested in major terrorist attacks before 1990 with large numbers of casualties.  I'm looking for descriptions of terrorist organizations, attacks, or the number of casualties before 1990.</narr>
+<count>4</count>
+</topic>
+
+<topic>
+<num>29</num>
+<title>player recruit diet</title>
+<desc>How is diet related to the chances of a player getting
+recruited</desc>
+<narr>I want to find 
+out how important diet is in a player's career.
+Results that show the effect of good or bad diet on a player's
+recruitment are 
+relevant.</narr>
+<count>3</count>
+</topic>
+
+<topic>
+<num>30</num>
+<title>movies in Cannes film festival</title>
+<desc>What are the movies that have been chosen for the Cannes film festival in the past and what kind of movies usually get selected?</desc>
+<narr>I want to know what the Cannes film festival is about, what sort of movies get selected and a list of movies that were selected. I also want to know why Cannes film festival is worth attending for a film fanatic. I would not consider newspaper articles which refer to the film festival in passing as relevant. The document must have some data related to the movies that are played in the film festival. The mention of the name of a movie that has appeared or is going to appear in the film festival can make it relevant. </narr>
+<count>6</count>
+</topic>
+
+<topic>
+<num>31</num>
+<title> brazil industry forest </title>
+<desc> How do forests in Brazil affect industries? </desc> 
+<narr> I want to know the impact of forest activities on industries in Brazil. A result that discusses that concentrates on either forests or industries alone is irrelevant </narr>
+<count> 4 </count>
+</topic>
+
+<topic>
+<num>32</num>
+<title>Nuclear Reactor</title>
+<desc>What do you mean by Nuclear reactor?</desc>
+<narr>I am interested in knowing what exactly Nuclear reactors are used for? also interested to get more information about its working and its presence around the globe. </narr>
+<count>2</count>
+</topic>
+
+<topic>
+<num>33</num>
+<title>Yosemite wildfire</title>
+<desc>What are the recent wildfires at Yosemite National Park?</desc>
+<narr> I'm interested in the recent wildfires happened at Yosemite National Park. I'm looking for details about the intensity of the fire, aftermath of the damages and rescue activities of the park's fire management teams.</narr>
+<count>4</count>
+</topic>
+
+
+<topic>
+<num>34</num>
+<title>egg muffin breakfast recipes</title>
+<desc>what are the breakfast recipes that use egg and muffin?</desc>
+<narr>I am interested in finding breakfast recipes that contain both egg and muffin. Something that only uses egg or muffin will not be relevant</narr>
+<count>4</count>
+</topic>
+
+<topic>
+<num>35</num>
+<title>JBC</title>
+<desc>What does JBC mean?</desc>
+<narr>I am interested in finding out the meaning of JBC. In particular, what does J and B and C means?</narr>
+<count>2</count>
+</topic>
+
+</topics>

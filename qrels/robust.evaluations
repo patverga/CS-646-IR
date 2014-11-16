@@ -1,0 +1,22 @@
+qids       /home/pv/CS-646-IR/qrels/robust.results-map /home/pv/CS-646-IR/qrels/robust.results-ndcg20 /home/pv/CS-646-IR/qrels/robust.results-P10 
+1               0.106      0.070      0.300 
+5               0.102      0.388      0.100 
+10              0.601      0.391      0.700 
+12              0.483      0.521      0.600 
+15              0.569      0.366      0.500 
+17              0.491      0.900      0.400 
+18              0.697      0.911      1.000 
+20              0.128      0.117      0.200 
+24              0.521      0.593      0.400 
+27              0.572      0.680      0.800 
+30              0.702      0.384      0.800 
+33              0.761      0.907      1.000 
+34              0.136      0.243      0.100 
+35              0.500      0.631      0.250 
+
+
+
+run-id            map      ndcg20         P10  
+/home/pv/CS-646-IR/qrels/robust.results      0.455         0.507         0.511    
+
+Sig-Test: randomized, threshold set to 0.050000

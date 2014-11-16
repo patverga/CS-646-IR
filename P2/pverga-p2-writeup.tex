@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{ \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{CS 646 - IR} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge P2 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Patrick Verga} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section {Setup and Background}
+
+\subsection{Search Engine}
+For this project I used the Galago search engine. My queries were run using SDM. I found Galago relatively easy to use and worked well for this task. 
+
+\subsection{Query Creation}
+Query creation on the book data set proved to be very difficult. This is mainly because it was very hard to create a query with any relevant documents which could be due to the books being hundreds of years old. It was hard to know what types of information would or would not be included in the book set.
+The robust set was significantly easier as it was early 1990's news stories. The difficulty for robust was coming up with a query that did not return all relevant documents.
+
+\subsection{Judgments}
+The judgment process wasn't too bad. Sometimes it was hard to decide where on the 1-4 spectrum a document should fall. It also was occasionally a lengthy process when longer documents appeared.
+
+
+\section {Evaluations}
+For each of our three data sets we performed three evaluations : mean average precision, normalized discounted cumulative gain, and precision at 10. Table \ref{tab:book}.1 shows the individual results for each of the book queries. Table \ref{tab:book}.2 shows the individual results for each of the class robust queries. Table \ref{tab:all} shows the cumulative results for each data set.
+
+\begin{table}
+\parbox{.45\linewidth}{
+\label{tab:book}
+\centering
+\caption{Books evaluations separated by query.}
+\begin{tabular}{ |l |c | c | c|}
+\hline
+Query ID & MAP & NDCG@20 & P@10 \\
+\hline
+2 & 0.278 & 0.389 & 0.700 \\
+5 & 0.254 & 0.387 & 0.300 \\
+6 & 0.647 & 0.324 & 0.900 \\
+7 & 0.000 & 0.000 & 0.000 \\
+11 & 0.227 & 0.234 & 0.400 \\
+16 & 0.863 & 0.928 & 1.000 \\
+17 & 0.429 & 0.361 & 0.700 \\
+20 & 0.388 & 0.480 & 0.700 \\
+22 & 0.477 & 0.304 & 0.400 \\
+28 & 0.354 & 0.358 & 0.500 \\
+29 & 0.418 & 0.819 & 0.400 \\
+\hline
+\end{tabular}
+}
+\hfill
+\parbox{.45\linewidth}{
+\centering
+\caption{Class robust evaluations separated by query.}
+\begin{tabular}{ |l |c | c | c|}
+\hline
+Query ID & MAP & NDCG@20 & P@10 \\
+\hline
+1 & 0.106 & 0.070 & 0.300 \\
+5 & 0.102 & 0.388 & 0.100 \\
+10 & 0.601 & 0.391 & 0.700 \\
+12 & 0.483 & 0.521 & 0.600 \\
+15 & 0.569 & 0.366 & 0.500 \\
+17 & 0.491 & 0.900 & 0.400 \\
+18 & 0.697 & 0.911 & 1.000 \\
+20 & 0.128 & 0.117 & 0.200 \\
+24 & 0.521 & 0.593 & 0.400 \\
+27 & 0.572 & 0.680 & 0.800 \\
+30 & 0.702 & 0.384 & 0.800 \\
+33 & 0.761 & 0.907 & 1.000 \\
+34 & 0.136 & 0.243 & 0.100 \\
+35 & 0.500 & 0.631 & 0.250 \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+\begin{table}
+\label{tab:all}
+\centering
+\caption{Overall scored for each data set.}
+\begin{tabular}{ |l |c | c | c|}
+\hline
+Query ID & MAP & NDCG@20 & P@10 \\
+\hline
+Books & 0.394 & 0.417 & 0.545    \\
+Class Robust & 0.455 & 0.507 & 0.511 \\
+Community Robust & 0.259 & 0.418 & 0.434 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section {Performance}
+The system seems to have performed fairly well based on each of the evaluations. There seems to be quite a wide range in query results. On the book data, query 7 returned nothing relevant while query 16 was almost perfect. The range on the robust set was not quite as large ranging from query 5 with a MAP of .102 to query 33 with a map of .761.
+
+\subsection {Robust vs Books}
+The class robust queries performed slightly better than the book queries. This could be due to the book dataset itself which has additional difficulties including spanning time and OCR errors.
+
+\subsection {Class vs Community Robust}
+The class robust queries performed significantly better than the community robust queries. This could be due to either differences in the way judgments were created or it could be the case that the class robust queries were simply easier.
+
+
+\end{document}

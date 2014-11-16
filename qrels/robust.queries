@@ -1,0 +1,61 @@
+{
+"queries" : [
+{
+"number" : "1",
+"text" : "#sdm(foreign trade)"
+},
+{
+"number" : "5",
+"text" : "#sdm(when was the fall of Saigon)"
+},
+{
+"number" : "10",
+"text" : "#sdm(global warming)"
+},
+{
+"number" : "12",
+"text" : "#sdm(Shakespeare poems)"
+},
+{
+"number" : "15",
+"text" : "#sdm(small pox effects)"
+},
+{
+"number" : "17",
+"text" : "#sdm(Stevie Ray Vaughan birth)"
+},
+{
+"number" : "18",
+"text" : "#sdm(ISRO PSLV failure)"
+},
+{
+"number" : "20",
+"text" : "#sdm(thanksgiving turkey recipe)"
+},
+{
+"number" : "24",
+"text" : "#sdm( mahatma gandhi )"
+},
+{
+"number" : "27",
+"text" : "#sdm(Ninja Turtles )"
+},
+{
+"number" : "30",
+"text" : "#sdm(movies in Cannes film festival)"
+},
+{
+"number" : "33",
+"text" : "#sdm(Yosemite wildfire)"
+},
+{
+"number" : "34",
+"text" : "#sdm(egg muffin breakfast recipes)"
+},
+{
+"number" : "35",
+"text" : "#sdm(JBC)"
+}
+]
+}
+
