@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{chngpage}
+\usepackage[protrusion=true,expansion,kerning]{microtype}
+\usepackage{url}
+\usepackage{enumitem}
+
+% adjust margins:
+\topmargin=-0.25in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=8.5in
+\headsep=0.25in
+
+% document-specific information
+\newcommand{\docTitle}{Final Exam}
+\newcommand{\docSubTitle}{}
+\newcommand{\docDate}{}
+\newcommand{\docClass}{CS 646}
+\newcommand{\docInstructor}{}
+\newcommand{\authorName}{Patrick Verga}
+
+% header and footer
+\pagestyle{fancy}
+\lhead{\authorName}
+\chead{\bf\docTitle}
+\rhead{\docClass\ -- \docInstructor}    
+\lfoot{}
+\cfoot{}
+\rfoot{\emph{Page\ \thepage\ of\ \pageref{LastPage}}}                          
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\begin{document}
+
+
+\begin{enumerate}[label=\Alph*]
+\item % A
+\begin {enumerate}[label=\arabic*]
+\item % A1
+To minimize the number of relevant docs in $C_U$, the pool should be constructed as $S=P$. Judging more documents can only decrease (or make no change to) the number of unjudged relevant docs. Adding all systems to the pool will minimize unjudged docs.
+\item % A2
+The greatest AP change would occur if x were at rank 1. This would result in an increase of $\frac{1}{r+1}$
+\item % A3
+The smallest change would occur if x were at rank 100.
+\item % A4
+$AP_p = \frac{1+1+1}{3}=1$ \\
+$AP_t = \frac{.5+.66+.75}{4}=.478$
+\item % A5
+
+\item % A6
+
+
+\end{enumerate}
+
+\item % B
+\begin {enumerate}[label=\arabic*]
+\item \textit{Does how or when indexing is done change?}\\
+Twitter is a constantly expanding and evolving corpus. If you index at time $t$ you will not be able to retrieve any new tweets that occur after it.
+
+\item \textit{Should retrieval be handled differently?}\\
+
+
+\item \textit{Should term weighting be done differently?}\\
+
+
+\item \textit{What else?}\\
+
+
+\end{enumerate}
+
+
+\item % C
+\begin {enumerate}[label=\arabic*]
+\item % C1
+
+
+\item % C2
+LCA enforces that the expansion terms be used close to the query terms increasing the odds they are related. Also most frequent words are usually functional.
+
+\item % C3
+false
+
+\item % C4
+Long queries often contain distracting terms which cause concept drift. Title queries have undergone human key word filtering.
+
+\item % C5
+All of the words within a synonym class should be used to calculate a single collapsed idf value.
+
+\end{enumerate}
+
+
+\item % D
+\begin {enumerate}[label=\arabic*]
+\item % D1
+This is similar to stemming except without the many rules that make stemming algorithms effective. For example, $run^*$ would gather diverse words such as running, runtishly, runnabouts, rung, and rune \footnote{http://www.scrabblefinder.com/starts-with/run/}. Clearly, this is not a good strategy, creating far more spurious equivalence stems.
+
+\item % D2
+A = "a b z" \\
+B = "x y h" \\
+C = "x y z"\\
+$1$-$NN_A = \{C\}$ \\
+$1$-$NN_C = \{B\}$ \\
+A's cluster contains C. C's cluster does not contain A.
+
+\item % D3
+With one relevant document $AP=MRR$. AP will be just the precision at that relevant document which is $AP=\frac{1}{rank} = MRR$
+
+\item % D4
+A signature file can not increase the miss rate (false negative). Without additional filtering, it will increase the false positive rate due to hash collisions.
+
+\item % D5
+I would expect a. the results to be largely the same. It would be very hard to get everything exactly the same such as tokenization, galago bugs, etc. However, if you are using the same algorithms, same parameters, same data set, they should be atleast 'roughly' the same.
+
+\end{enumerate}
+
+\item % E
+\begin {enumerate}[label=\arabic*]
+\item
+\item
+\end{enumerate}
+
+\item % F
+\begin {enumerate}[label=\arabic*]
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\item
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
